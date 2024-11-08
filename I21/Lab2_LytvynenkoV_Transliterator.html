@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Транслітерація</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Зовнішній вигляд веб-сторінки</h2>
+        <textarea id="ukrainianText" placeholder="Введіть текст українською..."></textarea>
+        <textarea id="transliteratedText" placeholder="Транслітерований текст..." readonly></textarea>
+    </div>
+
+    <script>
+        function transliterate(text) {
+            const translitRules = {
+                'А': 'A', 'Б': 'B', 'В': 'V', 'Г': 'H', 'Ґ': 'G', 'Д': 'D', 'Е': 'E', 'Є': 'Ye', 'Ж': 'Zh', 'З': 'Z', 'И': 'Y',
+                'І': 'I', 'Ї': 'Yi', 'Й': 'Y', 'К': 'K', 'Л': 'L', 'М': 'M', 'Н': 'N', 'О': 'O', 'П': 'P', 'Р': 'R', 'С': 'S',
+                'Т': 'T', 'У': 'U', 'Ф': 'F', 'Х': 'Kh', 'Ц': 'Ts', 'Ч': 'Ch', 'Ш': 'Sh', 'Щ': 'Shch', 'Ю': 'Yu', 'Я': 'Ya',
+                'а': 'a', 'б': 'b', 'в': 'v', 'г': 'h', 'ґ': 'g', 'д': 'd', 'е': 'e', 'є': 'ie', 'ж': 'zh', 'з': 'z', 'и': 'y',
+                'і': 'i', 'ї': 'i', 'й': 'i', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r', 'с': 's',
+                'т': 't', 'у': 'u', 'ф': 'f', 'х': 'kh', 'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'shch', 'ю': 'iu', 'я': 'ia',
+                'ь': '', '’': '', "'": '', 'ь': ''
+            };
+            return text.split('').map(char => translitRules[char] || char).join('');
+        }
+
+        document.getElementById('ukrainianText').addEventListener('input', function() {
+            const inputText = this.value;
+            console.log("Введений текст:", inputText); // Перевірка введеного тексту
+            const transliteratedText = transliterate(inputText);
+            console.log("Транслітерований текст:", transliteratedText); // Перевірка транслітерованого тексту
+            document.getElementById('transliteratedText').value = transliteratedText;
+        });
+    </script>
+</body>
+</html>
