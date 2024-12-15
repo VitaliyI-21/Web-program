@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма реєстрації</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            width: 50%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .links a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #007BFF;
+            margin: 10px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Форма реєстрації</h1>
+        <form action="" method="post">
+            <label for="user_name">Прізвище, ім'я, по батькові:</label>
+            <input type="text" id="user_name" name="user_name" required>
+            <label for="user_email">E-mail:</label>
+            <input type="email" id="user_email" name="user_email" required>
+            <label for="user_birthdate">Дата народження:</label>
+            <input type="date" id="user_birthdate" name="user_birthdate" required>
+            <label for="user_sex">Стать:</label>
+            <select id="user_sex" name="user_sex" required>
+                <option value="Чоловіча">Чоловіча</option>
+                <option value="Жіноча">Жіноча</option>
+            </select>
+            <button type="submit" class="submit-btn">Відправити</button>
+        </form>
+    </div>
+    <div class="links">
+        <p>Перейдіть на одну з наступних сторінок:</p>
+        <a href="Lab1_Lytvynenko.html">1</a>
+        <a href="Lab1_2_Lytvynenko.html">2</a>
+        3
+    </div>
+</body>
+</html>
